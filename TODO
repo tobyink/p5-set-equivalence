@@ -1,5 +1,4 @@
 Tests:
-	- equivalence
 	- objects overloading stringification
 	- objects not overloading stringification
 	- type constraints
