@@ -1,0 +1,7 @@
+Tests:
+	- tied array
+	- equivalence
+	- objects overloading stringification
+	- objects not overloading stringification
+	- type constraints
+	- overloaded operations
