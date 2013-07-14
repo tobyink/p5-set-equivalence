@@ -89,7 +89,7 @@ sub _default_equivalence_relation {
 	
 	# Undef is not equal to ""
 	return false unless !!defined($x) == !!defined($y);
-	
+
 	# A non-overloaded object can never be equal to a string!
 	return false if !ref($x) && blessed($y) && !overload::Overloaded($y);
 	return false if !ref($y) && blessed($x) && !overload::Overloaded($x);
@@ -109,7 +109,8 @@ sub insert {
 	my $tc = $self->type_constraint;
 	
 	my $count;
-	ITEM: while (my $item = shift @_) {
+	ITEM: while (@_) {
+		my $item = shift @_;
 		$tc->check($item) || croak $tc->get_message($item) if $tc;
 		next ITEM if any { $eq->($_, $item) } $self->members;
 		push @{$self->{members}}, $item;
@@ -128,7 +129,8 @@ sub _unshift {
 	my $tc = $self->type_constraint;
 	
 	my $count;
-	ITEM: while (my $item = pop @_) {
+	ITEM: while (@_) {
+		my $item = pop @_;
 		$tc->check($item) || croak $tc->get_message($item) if $tc;
 		next ITEM if any { $eq->($_, $item) } $self->members;
 		unshift @{$self->{members}}, $item;
@@ -146,12 +148,13 @@ sub contains {
 	
 	return true unless @_;
 	
-	ITEM: while (my $item = shift @_) {
+	ITEM: while (@_) {
+		my $item = shift @_;
 		($tc->check($item) or return false) if $tc;
-		return true if any { $eq->($_, $item) } $self->members;
+		return false unless any { $eq->($_, $item) } $self->members;
 	}
 	
-	return false;
+	return true;
 }
 
 sub member {
