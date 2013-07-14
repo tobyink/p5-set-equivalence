@@ -410,14 +410,18 @@ sub pop {
 	my $self = shift;
 	croak "cannot call pop on immutable set"
 		unless $self->is_mutable;
-	$self->remove( $self->{members}[-1] );
+	return if $self->is_null;
+	$self->remove( my $r = $self->{members}[-1] );
+	return $r;
 }
 
 sub _shift {
 	my $self = shift;
 	croak "cannot call _shift on immutable set"
 		unless $self->is_mutable;
-	$self->remove( $self->{members}[0] );
+	return if $self->is_null;
+	$self->remove( my $r = $self->{members}[0] );
+	return $r;
 }
 
 set -> is_null
