@@ -91,8 +91,8 @@ sub _default_equivalence_relation {
 	return false unless !!defined($x) == !!defined($y);
 
 	# A non-overloaded object can never be equal to a string!
-	return false if !ref($x) && blessed($y) && !overload::Overloaded($y);
-	return false if !ref($y) && blessed($x) && !overload::Overloaded($x);
+	return false if !ref($x) && ref($y) && !overload::Overloaded($y);
+	return false if !ref($y) && ref($x) && !overload::Overloaded($x);
 	
 	# OK then, they're equal!
 	return true;
