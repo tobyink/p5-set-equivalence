@@ -1,5 +1,4 @@
 Tests:
-	- type constraints
 	- overloaded operations
 
 Type constraint library:

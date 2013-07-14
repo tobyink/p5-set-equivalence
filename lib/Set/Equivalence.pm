@@ -743,9 +743,9 @@ parameter, or class methods with two parameters:
    'Set::Equivalent'->union($set1, $set2);
 
 They all return mutable sets. If called as an object method, the returned
-sets have the same equivalence relation as the set given in the first
-argument; if called as a class method, the returned sets have the default
-equivalence relation.
+sets have the same equivalence relation and type constraint as the set
+given in the first argument; if called as a class method, the returned sets
+have the default equivalence relation and no type constraint.
 
 =over
 
