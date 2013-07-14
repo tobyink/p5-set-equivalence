@@ -4,9 +4,7 @@
 
 =head1 PURPOSE
 
-Test that Set::Equivalence's mutator methods work.
-
-C<make_immutable> is also tested in 02constructors.t.
+Test that Set::Equivalence's comparison methods work.
 
 =head1 AUTHOR
 
