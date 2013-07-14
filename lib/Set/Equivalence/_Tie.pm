@@ -15,7 +15,7 @@ sub TIEARRAY {
 
 sub FETCH {
 	my $set = ${+shift};
-	$set->{set}->[$_[0]];
+	$set->{members}[$_[0]];
 }
 
 sub FETCHSIZE {

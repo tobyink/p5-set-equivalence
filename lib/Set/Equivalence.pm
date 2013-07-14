@@ -373,7 +373,7 @@ sub as_array {
 		tie my @arr, 'Set::Equivalence::_Tie', $self;
 		\@arr;
 	};
-	Scalar::Util::weaken($self->{_array}) unless Scalar::Util::is_weak($self->{_array});
+	Scalar::Util::weaken($self->{_array}) unless Scalar::Util::isweak($self->{_array});
 	return $array;
 }
 
@@ -806,6 +806,12 @@ Returns a reference to a tied array that can be used to iterate through
 the set members, C<push> new members onto, and C<pop> members off.
 
 The order of members in the array is arbitrary.
+
+L<Set::Equivalent::_Tie> does not implement the entire L<Tie::Array>
+interface, so some bits will crash. In particular, STORE operations are
+not implemented, so you can't do C<< $set->as_array->[1] = 42 >>.
+C<splice>, C<exists> and C<delete> will probably also fail. (But
+C<exists> and C<delete> on array elements are insane anyway.)
 
 =item C<< iterator >>
 
