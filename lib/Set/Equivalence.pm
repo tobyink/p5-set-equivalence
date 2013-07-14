@@ -237,7 +237,7 @@ sub clear {
 
 sub as_string {
 	my $self = shift;
-	"(" . join(" ", $self->members) . ")";
+	"(" . join(" ", sort $self->members) . ")";
 }
 
 sub _args
@@ -403,7 +403,7 @@ sub reduce {
 
 sub part {
 	my ($maker, $this, $code) = _args 1, @_;
-	return $maker->(@$_), &List::MoreUtils::part($code, $this->members);
+	return map $maker->(@$_), &List::MoreUtils::part($code, $this->members);
 }
 
 sub pop {
