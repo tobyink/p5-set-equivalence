@@ -1,0 +1,8 @@
+# This file provides instructions for packaging.
+
+`Set-Equivalence`
+	perl_version_from m`Set::Equivalence`;
+	version_from      m`Set::Equivalence`;
+	readme_from       m`Set::Equivalence` ;
+	.
+
