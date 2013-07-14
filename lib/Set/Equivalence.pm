@@ -272,7 +272,7 @@ sub _args
 sub equal {
 	my (undef, $this, $that) = _args 2, @_;
 	return true if refaddr($this) == refaddr($that);
-	$this->intersection($that)->is_null;
+	$this->contains($that->members) and $that->contains($this->members);
 }
 
 sub not_equal {
