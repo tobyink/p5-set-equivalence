@@ -1,6 +1,6 @@
 # This file acts as the project's changelog.
 
-`Set-Equivalence 0.001 cpan:TOBYINK`
+`Set-Equivalence 0.000_01 cpan:TOBYINK`
 	issued  2013-07-14;
-	label   "Initial release".
+	label   "Preview release".
 

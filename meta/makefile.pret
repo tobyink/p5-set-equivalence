@@ -3,6 +3,11 @@
 `Set-Equivalence`
 	perl_version_from m`Set::Equivalence`;
 	version_from      m`Set::Equivalence`;
-	readme_from       m`Set::Equivalence` ;
+	readme_from       m`Set::Equivalence`;
+	requires          p`List::MoreUtils 0.33`;
+	recommends        p`Type::Tiny 0.014`;
+	test_requires     p`Test::More 0.96`;
+	test_requires     p`Test::Fatal`;
+	test_requires     p`Test::Requires`;
 	.
 
