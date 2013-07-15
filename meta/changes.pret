@@ -19,3 +19,9 @@
 		item "Types::Set."^^Addition;
 	].
 
+`Set-Equivalence 0.000_04 cpan:TOBYINK`
+	issued  2013-07-15;
+	changeset [
+		item "Lower Type::Tiny dependency version number."^^Bugfix;
+	].
+

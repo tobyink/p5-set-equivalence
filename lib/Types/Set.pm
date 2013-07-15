@@ -6,7 +6,7 @@ use warnings;
 
 BEGIN {
 	$Types::Set::AUTHORITY = 'cpan:TOBYINK';
-	$Types::Set::VERSION   = '0.000_03';
+	$Types::Set::VERSION   = '0.000_04';
 }
 
 use Set::Equivalence ();
