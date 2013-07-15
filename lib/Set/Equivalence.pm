@@ -686,6 +686,10 @@ Throws an exception if the set is immutable.
 
 Converts the set to an immutable one.
 
+Returns the invocant, which means this method is suitable for chaining.
+
+   my $even_primes = set(2)->make_immutable;
+
 =item C<< weaken >>
 
 Unimplemented.
