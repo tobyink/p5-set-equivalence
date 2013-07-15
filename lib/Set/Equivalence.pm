@@ -364,9 +364,10 @@ sub is_empty { shift->is_null(@_) }
 BEGIN {
 	require Exporter;
 	push our(@ISA), 'Exporter';
-	push our(@EXPORT_OK), 'set';
+	push our(@EXPORT_OK), 'set', 'typed_set';
 };
-sub set { __PACKAGE__->new(members => \@_) };
+sub set       {                 __PACKAGE__->new(members => \@_,                       ) };
+sub typed_set { my $tc = shift; __PACKAGE__->new(members => \@_, type_constraint => $tc) };
 
 # Extra fun
 sub as_array {
@@ -561,9 +562,9 @@ Optional; accepts L<Type::Tiny> and L<MooseX::Types> type constraints
 
 =back
 
-=item C<< set(@members) >>
+=item C<< set(@members) >>, C<< typed_set($constraint, @members) >>
 
-Exportable function (i.e. not a method) that acts as a shortcut for C<new>.
+Exportable functions (i.e. not a method) that act as shortcuts for C<new>.
 
 =item C<< clone >>
 

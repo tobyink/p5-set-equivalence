@@ -24,7 +24,7 @@ use strict;
 use warnings;
 use Test::More;
 
-use Set::Equivalence qw(set);
+use Set::Equivalence qw( set typed_set );
 
 my $set = set( 1..5 );
 
@@ -49,5 +49,16 @@ is_deeply($clone2, $set);
 ok( set->is_mutable, 'sets default to mutable' );
 ok( set->make_immutable->is_immutable, 'make_immutable works' );
 ok( set->make_immutable->clone->is_mutable, 'clones are always mutable' );
+
+is_deeply(
+	+{%{typed_set(0, 1)}},
+	{
+		members               => [ 1 ],
+		equivalence_relation  => \&Set::Equivalence::_default_equivalence_relation,
+		mutable               => !!1,
+		type_constraint       => 0,
+	},
+	'typed_set',
+);
 
 done_testing;
