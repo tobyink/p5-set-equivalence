@@ -10,7 +10,7 @@ BEGIN {
 }
 
 use Set::Equivalence ();
-use Type::Tiny 0.015;
+use Type::Tiny 0.014;
 use Type::Library -base, -declare => qw(Set AnySet MutableSet ImmutableSet);
 use Types::Standard qw(ArrayRef InstanceOf HasMethods);
 use Type::Utils -all;
