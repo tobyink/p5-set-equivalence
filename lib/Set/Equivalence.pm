@@ -436,7 +436,7 @@ __END__
 
 =encoding utf-8
 
-=for stopwords user-configurable booleans supersets superset
+=for stopwords user-configurable booleans supersets superset invocant
 
 =head1 NAME
 
@@ -860,6 +860,8 @@ Please report any bugs to
 L<http://rt.cpan.org/Dist/Display.html?Queue=Set-Equivalence>.
 
 =head1 SEE ALSO
+
+L<Types::Set>.
 
 L<Set::Object>, L<Set::Scalar>, L<Set::Tiny>.
 

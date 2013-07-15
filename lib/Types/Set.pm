@@ -170,4 +170,79 @@ sub _params
 	);
 }
 
-1;
+Set -> has_coercion
+
+__END__
+
+=pod
+
+=encoding utf-8
+
+=head1 NAME
+
+Types::Set - Set::Equivalence-related type constraints
+
+=head1 DESCRIPTION
+
+=head2 Type constraints
+
+=over
+
+=item C<< AnySet >>
+
+This type constraint is satisfied by any blessed object that provides
+C<insert>, C<delete>, C<members> and C<contains> methods.
+
+=item C<< Set >>
+
+A blessed L<Set::Equivalence> object.
+
+This may be parameterized with another type constraint; for example,
+C<< Set[Num] >> is a set of numbers. In this case, not only must all
+the set members be numbers, but also the set itself must have a type
+constraint of C<Num> (or a subtype of C<Num>, such as C<Int>) attached,
+which will prevent non-numeric values from being inserted into the
+set later.
+
+This type can coerce from C<ArrayRef> and C<AnySet>.
+
+=item C<< MutableSet >>
+
+Like C<Set>, but must be a mutable set. Similar parameterization.
+
+This type can coerce from C<ImmutableSet>, C<ArrayRef> and C<AnySet>.
+
+=item C<< ImmutableSet >>
+
+Like C<Set>, but must not be a mutable set. Similar parameterization.
+
+This type can coerce from C<MutableSet>, C<ArrayRef> and C<AnySet>.
+
+=back
+
+=head1 BUGS
+
+Please report any bugs to
+L<http://rt.cpan.org/Dist/Display.html?Queue=Set-Equivalence>.
+
+=head1 SEE ALSO
+
+L<Set::Equivalence>.
+
+=head1 AUTHOR
+
+Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
+
+=head1 COPYRIGHT AND LICENCE
+
+This software is copyright (c) 2013 by Toby Inkster.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=head1 DISCLAIMER OF WARRANTIES
+
+THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
