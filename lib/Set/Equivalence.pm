@@ -163,7 +163,10 @@ sub member {
 	my $eq = $self->equivalence_relation;
 	my $tc = $self->type_constraint;
 	($tc->check($item) or return) if $tc;
-	return first { $eq->($_, $item) } $self->members;
+	for ($self->members) {
+		return $_ if $eq->($_, $item)
+	}
+	return;
 }
 
 sub members {
