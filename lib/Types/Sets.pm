@@ -39,15 +39,19 @@ coerce Set,
 	from AnySet,   q{ 'Set::Equivalence'->new(members => [$_->members]) },
 	;
 
+coerce AnySet,
+	from ArrayRef, q{ 'Set::Equivalence'->new(members => $_) },
+	;
+
 coerce MutableSet,
-	from ArrayRef,     q{ 'Set::Equivalence'->new(members => $_) },
 	from ImmutableSet, q{ $_->clone },
+	from ArrayRef,     q{ 'Set::Equivalence'->new(members => $_) },
 	from AnySet,       q{ 'Set::Equivalence'->new(members => [$_->members]) },
 	;
 
 coerce ImmutableSet,
-	from ArrayRef,   q{ 'Set::Equivalence'->new(mutable => !!0, members => $_) },
 	from MutableSet, q{ $_->clone->make_immutable },
+	from ArrayRef,   q{ 'Set::Equivalence'->new(mutable => !!0, members => $_) },
 	from AnySet,     q{ 'Set::Equivalence'->new(mutable => !!0, members => [$_->members]) },
 	;
 
