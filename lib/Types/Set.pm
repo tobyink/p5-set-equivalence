@@ -1,4 +1,4 @@
-package Types::Sets;
+package Types::Set;
 
 use 5.008;
 use strict;
@@ -76,7 +76,7 @@ sub _params
 			return sub {
 				return (
 					undef,
-					"do { my \$tc = $_\->type_constraint; Scalar::Util::blessed(\$tc) and \$tc->can('is_a_type_of') and \$tc->is_a_type_of(\$Types::Sets::REFADDR{$refaddr}) }",
+					"do { my \$tc = $_\->type_constraint; Scalar::Util::blessed(\$tc) and \$tc->can('is_a_type_of') and \$tc->is_a_type_of(\$Types::Set::REFADDR{$refaddr}) }",
 				);
 			};
 		},

@@ -4,7 +4,7 @@
 
 =head1 PURPOSE
 
-Test constraints from Types::Sets.
+Test constraints from Types::Set.
 
 =head1 AUTHOR
 
@@ -28,7 +28,7 @@ use Test::TypeTiny;
 
 use Set::Equivalence qw( set typed_set );
 use Types::Standard -types;
-use Types::Sets -types;
+use Types::Set -types;
 
 should_pass( set(1...5), AnySet );
 should_fail( [], AnySet );

@@ -27,7 +27,7 @@ use Test::Fatal;
 
 use Set::Equivalence qw(typed_set);
 use Types::Standard -types;
-use Types::Sets -types;
+use Types::Set -types;
 
 my $Rounded = Int->plus_coercions(Num, q{ int($_) });
 
