@@ -59,6 +59,36 @@ is(
 );
 
 is(
+	$set->element(4),
+	4,
+);
+
+is(
+	$set->element(6),
+	undef,
+);
+
+is_deeply(
+	[$set->member(4)],
+	[4],
+);
+
+is_deeply(
+	[$set->member(6)],
+	[],
+);
+
+is_deeply(
+	[$set->element(4)],
+	[4],
+);
+
+is_deeply(
+	[$set->element(6)],
+	[],
+);
+
+is(
 	refaddr($set->equivalence_relation),
 	refaddr(\&Set::Equivalence::_default_equivalence_relation),
 );

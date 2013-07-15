@@ -50,12 +50,25 @@ is_deeply(
 );
 
 my $elem = pop(@$set);
-ok($elem < 21 && $elem > 0, 'pop @$set');
+cmp_ok($elem, '<', 21, 'pop @$set ... below upper limit');
+cmp_ok($elem, '>', 0, '... above lower limit');
 is($set->size, 19, '... reduces size of set');
 is(scalar(@$set), 19, '... reflected in scalar(@$set)');
 
 is_deeply(
 	[ sort $elem, @$set ],
+	[ sort 1..20 ],
+	'... seems to have altered $set correctly',
+);
+
+my $elem2 = shift(@$set);
+cmp_ok($elem2, '<', 21, 'shift @$set ... below upper limit');
+cmp_ok($elem2, '>', 0, '... above lower limit');
+is($set->size, 18, '... reduces size of set');
+is(scalar(@$set), 18, '... reflected in scalar(@$set)');
+
+is_deeply(
+	[ sort $elem, $elem2, @$set ],
 	[ sort 1..20 ],
 	'... seems to have altered $set correctly',
 );

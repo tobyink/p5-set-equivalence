@@ -43,6 +43,10 @@ ok( $set->contains(), 'contains() returns true' );
 
 ok( $set->contains(2), 'contains($member)' );
 
+ok( $set->includes(2), 'includes($member)' );
+
+ok( $set->has(2), 'has($member)' );
+
 ok( $set->contains(2, 3), 'contains(@members)' );
 
 ok( !$set->contains(2..10), 'contains(@mixed)' );

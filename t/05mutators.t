@@ -41,7 +41,8 @@ is_deeply(
 	[ sort 1..10 ],
 );
 
-is($set->remove(-10..3), 3);
+is($set->remove(-10..2), 2);
+is($set->delete(3), 1);
 
 is($set->size, 7);
 
@@ -66,9 +67,15 @@ is($set->size, 9);
 is(set->pop, undef);
 is(set(42)->pop, 42);
 
+ok(not $set->is_null);
+ok(not $set->is_empty);
+
 $set->clear;
 
 is($set->size, 0);
+
+ok($set->is_null);
+ok($set->is_empty);
 
 is_deeply(
 	[ $set->members ],
