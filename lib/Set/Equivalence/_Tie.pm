@@ -2,7 +2,7 @@ package Set::Equivalence::_Tie;
 
 BEGIN {
 	$Set::Equivalence::_Tie::AUTHORITY = 'cpan:TOBYINK';
-	$Set::Equivalence::_Tie::VERSION   = '0.000_01';
+	$Set::Equivalence::_Tie::VERSION   = '0.000_02';
 }
 
 require Tie::Array;

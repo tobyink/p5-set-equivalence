@@ -6,7 +6,7 @@ use warnings;
 
 BEGIN {
 	$Set::Equivalence::AUTHORITY = 'cpan:TOBYINK';
-	$Set::Equivalence::VERSION   = '0.000_01';
+	$Set::Equivalence::VERSION   = '0.000_02';
 }
 
 use Carp qw( croak );

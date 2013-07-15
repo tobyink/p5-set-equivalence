@@ -4,3 +4,10 @@
 	issued  2013-07-14;
 	label   "Preview release".
 
+`Set-Equivalence 0.000_02 cpan:TOBYINK`
+	issued  2013-07-15;
+	changeset [
+		item "Improved test suite."^^Packaging;
+		item "Fixed $set->member in list context."^^Bugfix;
+	].
+
