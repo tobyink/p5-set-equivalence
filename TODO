@@ -1,6 +1,3 @@
-Tests:
-	- overloaded operations
-
 Type constraint library:
 	- Set
 	- MutableSet
