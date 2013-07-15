@@ -362,8 +362,8 @@ sub is_empty { shift->is_null(@_) }
 
 # Exports
 BEGIN {
-	require Exporter;
-	push our(@ISA), 'Exporter';
+	require Exporter::TypeTiny;
+	push our(@ISA), 'Exporter::TypeTiny';
 	push our(@EXPORT_OK), 'set', 'typed_set';
 };
 sub set       {                 __PACKAGE__->new(members => \@_,                       ) };
