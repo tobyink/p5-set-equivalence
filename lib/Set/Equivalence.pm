@@ -566,6 +566,9 @@ Optional; accepts L<Type::Tiny> and L<MooseX::Types> type constraints
 
 Exportable functions (i.e. not a method) that act as shortcuts for C<new>.
 
+Note that this module uses L<Exporter::TypeTiny>, which allows exported
+functions to be renamed.
+
 =item C<< clone >>
 
 Returns a shallow clone of an existing set, with the same members and the
