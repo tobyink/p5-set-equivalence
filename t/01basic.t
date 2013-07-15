@@ -24,7 +24,7 @@ use strict;
 use warnings;
 use Test::More;
 
-use_ok('Set::Equivalence');
+use_ok('Set::Equivalence') or BAIL_OUT("ARGH!");
 
 done_testing;
 
