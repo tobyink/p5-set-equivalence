@@ -36,7 +36,6 @@ is_deeply(
 		members               => [ 1..5 ],
 		equivalence_relation  => \&Set::Equivalence::_default_equivalence_relation,
 		mutable               => !!1,
-		type_constraint       => undef,
 	},
 );
 
@@ -56,7 +55,7 @@ is_deeply(
 		members               => [ 1 ],
 		equivalence_relation  => \&Set::Equivalence::_default_equivalence_relation,
 		mutable               => !!1,
-		type_constraint       => 0,
+		type_constraint       => '0',
 	},
 	'typed_set',
 );
