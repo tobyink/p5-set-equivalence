@@ -647,6 +647,10 @@ set.
 
 Alias: C<includes>, C<has>.
 
+=item C<< should_coerce >>
+
+Returns true iff this set will attempt type coercion of incoming members.
+
 =back
 
 =head2 Mutators
