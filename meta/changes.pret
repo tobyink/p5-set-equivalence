@@ -11,3 +11,11 @@
 		item "Fixed $set->member in list context."^^Bugfix;
 	].
 
+`Set-Equivalence 0.000_03 cpan:TOBYINK`
+	issued  2013-07-15;
+	changeset [
+		item "Set::Equivalence uses Exporter::TypeTiny instead of Exporter.pm for exporting."^^Change;
+		item "Set::Equivalence objects can now apply type constraints and coercions to their members."^^Addition;
+		item "Types::Set."^^Addition;
+	].
+
