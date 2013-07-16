@@ -25,3 +25,9 @@
 		item "Lower Type::Tiny dependency version number."^^Bugfix;
 	].
 
+`Set-Equivalence 0.000_05 cpan:TOBYINK`
+	issued  2013-07-16;
+	changeset [
+		item "Raise Type::Tiny dependency version number."^^Bugfix;
+	].
+

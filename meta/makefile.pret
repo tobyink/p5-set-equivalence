@@ -5,7 +5,7 @@
 	version_from      m`Set::Equivalence`;
 	readme_from       m`Set::Equivalence`;
 	requires          p`List::MoreUtils 0.33`;
-	requires          p`Exporter::TypeTiny 0.014`;
+	requires          p`Type::Tiny 0.016`;
 	test_requires     p`Test::More 0.96`;
 	test_requires     p`Test::Fatal 0.010`;
 	test_requires     p`Test::Requires 0.06`;
