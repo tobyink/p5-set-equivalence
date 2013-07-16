@@ -31,3 +31,10 @@
 		item "Raise Type::Tiny dependency version number."^^Bugfix;
 	].
 
+`Set-Equivalence 0.001 cpan:TOBYINK`
+	issued  2013-07-16;
+	changeset [
+		item "Add Types::Set SYNOPSIS and DESCRIPTION."^^Documentation;
+		item "Include examples using Types::Set with Moo and Moose."^^Documentation;
+	].
+
