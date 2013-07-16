@@ -37,7 +37,7 @@ package Band {
 	use MooX::late;
 	use Types::Standard qw( Str InstanceOf );
 	use Types::Set qw( Set );
-
+	
 	has name    => (
 		is          => 'ro',
 		isa         => Str,

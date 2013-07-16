@@ -182,7 +182,30 @@ __END__
 
 Types::Set - Set::Equivalence-related type constraints
 
+=head1 SYNOPSIS
+
+   package Band {
+      use Moose;
+      use Types::Standard qw( InstanceOf );
+      use Types::Set qw( Set );
+      
+      has members => (
+         is          => 'ro',
+         isa         => Set[ InstanceOf['Person'] ],
+         coerce      => 1,
+         default     => sub { +[] },
+         handles     => {
+            add_member     => 'insert',
+            has_member     => 'contains',
+            member_count   => 'size',
+         }
+      );
+   }
+
 =head1 DESCRIPTION
+
+Types::Set is a type constraint library built using L<Type::Tiny>;
+compatible with L<Moose>, L<Mouse>, L<Moo> and more.
 
 =head2 Type constraints
 
