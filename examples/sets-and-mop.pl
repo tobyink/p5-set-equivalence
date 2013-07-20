@@ -16,11 +16,29 @@ sub type {
 	);
 }
 
+# Improve mop's overloading support
+sub overload {
+	return mop::traits::overload(@_) unless $_[0]->isa('mop::attribute');
+	
+	require overload;
+	my ($attr, $operator) = @_;
+	my $allowed = join q[ ], @overload::ops{qw( conversion dereferencing unary )};
+	(" $allowed " =~ / \Q$operator\E /)
+		|| die "Attributes can only overload conversion, dereferencing and unary operators";
+
+	overload::OVERLOAD(
+		$attr->associated_meta->name,
+		$operator,
+		sub { my $self = shift; $attr->fetch_data_in_slot_for($self) },
+		fallback => 1
+	);
+}
+
 use Types::Standard qw( Str Int InstanceOf );
 use Types::Set qw( Set );
 
 class Person {
-	has $name is ro, type(Str), overload(q[""]); # PR31
+	has $name is ro, type(Str), overload(q[""]);
 	has $id is ro, type(Int);
 	
 	method equals ($other) is overload('eq'), overload('==') {
