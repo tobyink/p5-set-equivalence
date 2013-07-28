@@ -38,3 +38,9 @@
 		item "Include examples using Types::Set with Moo and Moose."^^Documentation;
 	].
 
+`Set-Equivalence 0.002 cpan:TOBYINK`
+	issued  2013-07-28;
+	changeset [
+		item "Include example using Types::Set with p5-mop."^^Documentation;
+	].
+
