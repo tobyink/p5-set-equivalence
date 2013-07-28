@@ -6,13 +6,13 @@ use mop; # https://github.com/stevan/p5-mop-redux
 # A trait for type constraints and coercions, which are not
 # included in MOP by default.
 sub type {
-	return unless $_[0]->isa('mop::attribute');	
+	return unless $_[0]->isa('mop::attribute');
 	my ($attr, $type) = @_;
 	$attr->bind(
 		'before:STORE_DATA',
 		$type->has_coercion
-			? sub { my $dref = $_[2]; $$dref = $type->assert_coerce($$dref); return }
-			: sub { my $dref = $_[2];          $type->assert_valid($$dref);  return }
+			? sub { my $dref = $_[2]; $$dref = $type->assert_coerce($$dref); }
+			: sub { my $dref = $_[2];          $type->assert_valid($$dref);  }
 	);
 }
 
@@ -24,13 +24,13 @@ sub overload {
 	my ($attr, $operator) = @_;
 	my $allowed = join q[ ], @overload::ops{qw( conversion dereferencing unary )};
 	(" $allowed " =~ / \Q$operator\E /)
-		|| die "Attributes can only overload conversion, dereferencing and unary operators";
-
+		or die "Attributes can only overload conversion, dereferencing and unary operators";
+	
 	overload::OVERLOAD(
 		$attr->associated_meta->name,
 		$operator,
 		sub { my $self = shift; $attr->fetch_data_in_slot_for($self) },
-		fallback => 1
+		fallback => 1,
 	);
 }
 
