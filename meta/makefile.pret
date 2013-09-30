@@ -1,14 +1,11 @@
 # This file provides instructions for packaging.
 
 `Set-Equivalence`
-	perl_version_from m`Set::Equivalence`;
-	version_from      m`Set::Equivalence`;
-	readme_from       m`Set::Equivalence`;
-	requires          p`List::MoreUtils 0.33`;
-	requires          p`Exporter::Tiny 0.026`;
-	requires          p`Type::Tiny 0.016`;
-	test_requires     p`Test::More 0.96`;
-	test_requires     p`Test::Fatal 0.010`;
-	test_requires     p`Test::Requires 0.06`;
+	deps:runtime-requirement [ deps:on "List::MoreUtils 0.33"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "Exporter::Tiny 0.026"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "Type::Tiny 0.016"^^deps:CpanId ];
+	deps:test-requirement    [ deps:on "Test::More 0.96"^^deps:CpanId ];
+	deps:test-requirement    [ deps:on "Test::Fatal 0.010"^^deps:CpanId ];
+	deps:test-requirement    [ deps:on "Test::Requires 0.06"^^deps:CpanId ];
 	.
 

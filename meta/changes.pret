@@ -44,10 +44,11 @@
 		item "Include example using Types::Set with p5-mop."^^Documentation;
 	].
 
-`Set-Equivalence 0.002 cpan:TOBYINK`
+`Set-Equivalence 0.003 cpan:TOBYINK`
 	issued  2013-09-30;
 	changeset [
 		item "Link to List::Objects::WithUtils in SEE ALSO."^^Documentation;
 		item "Use Exporter::Tiny instead of Exporter::TypeTiny."^^Update;
+		item "Use Dist::Inkt."^^Packaging;
 	].
 
