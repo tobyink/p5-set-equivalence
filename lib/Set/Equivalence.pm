@@ -1,8 +1,8 @@
-package Set::Equivalence;
-
 use 5.008;
 use strict;
 use warnings;
+
+package Set::Equivalence;
 
 BEGIN {
 	$Set::Equivalence::AUTHORITY = 'cpan:TOBYINK';

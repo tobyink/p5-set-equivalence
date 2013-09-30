@@ -1,8 +1,8 @@
-package Types::Set;
-
 use 5.008;
 use strict;
 use warnings;
+
+package Types::Set;
 
 BEGIN {
 	$Types::Set::AUTHORITY = 'cpan:TOBYINK';
