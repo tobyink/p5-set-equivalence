@@ -877,6 +877,8 @@ L<Types::Set>.
 
 L<Set::Object>, L<Set::Scalar>, L<Set::Tiny>.
 
+L<List::Objects::WithUtils>.
+
 =head1 AUTHOR
 
 Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
