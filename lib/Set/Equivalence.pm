@@ -364,8 +364,8 @@ sub is_empty { shift->is_null(@_) }
 
 # Exports
 BEGIN {
-	require Exporter::TypeTiny;
-	push our(@ISA), 'Exporter::TypeTiny';
+	require Exporter::Tiny;
+	push our(@ISA), 'Exporter::Tiny';
 	push our(@EXPORT_OK), 'set', 'typed_set';
 };
 sub set       {                 __PACKAGE__->new(members => \@_,                       ) };
@@ -574,7 +574,7 @@ which has coercions.
 
 Exportable functions (i.e. not a method) that act as shortcuts for C<new>.
 
-Note that this module uses L<Exporter::TypeTiny>, which allows exported
+Note that this module uses L<Exporter::Tiny>, which allows exported
 functions to be renamed.
 
 =item C<< clone >>
