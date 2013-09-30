@@ -6,7 +6,7 @@ package Types::Set;
 
 BEGIN {
 	$Types::Set::AUTHORITY = 'cpan:TOBYINK';
-	$Types::Set::VERSION   = '0.002';
+	$Types::Set::VERSION   = '0.003';
 }
 
 use Set::Equivalence ();

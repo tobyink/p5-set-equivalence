@@ -6,7 +6,7 @@ package Set::Equivalence;
 
 BEGIN {
 	$Set::Equivalence::AUTHORITY = 'cpan:TOBYINK';
-	$Set::Equivalence::VERSION   = '0.002';
+	$Set::Equivalence::VERSION   = '0.003';
 }
 
 use Carp qw( croak );
